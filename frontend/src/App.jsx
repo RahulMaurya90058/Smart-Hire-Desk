@@ -1,10 +1,19 @@
 import React from "react";
-export default function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
+function App() {
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-green-400">
-        Tailwind CSS is Working 🚀
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
+export default App;
